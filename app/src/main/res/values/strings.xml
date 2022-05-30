@@ -5,4 +5,18 @@
     <string name="explore">Explore</string>
     <string name="all_rights_reserved_2022">All rights reserved.2022</string>
     <string name="img">img</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="or">OR</string>
+    <string name="imgfrag">imgfrag</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="username_or_email">Username or email</string>
+    <string name="remember_me">Remember me</string>
+    <string name="enter_email">Enter email</string>
+    <string name="enter_username">Enter username</string>
+    <string name="_254712345678">+254712345678</string>
+    <string name="enter_password">Enter password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="signup">Signup</string>
 </resources>
