@@ -19,4 +19,8 @@
     <string name="enter_password">Enter password</string>
     <string name="confirm_password">Confirm password</string>
     <string name="signup">Signup</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="person">Person</string>
+    <string name="settings">Settings</string>
 </resources>
