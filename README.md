@@ -18,45 +18,24 @@ A movie aplication that allows you to browse a list of your favourite movies vie
 ### Prerequisites
 
 - Basic Git knowledge, including an installed version of Git.
-- Your application must run on the SDK version 11, 15 or 16.
+- Your application must run on the SDK version 32
 
-### Installing
+## Tests
 
-A step by step series of examples that tell you how to get a development env running
+There are two categories of tests for the application:
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
+    -Unit Tests
+    
+    -Instrumentation Tests
 
 ### Break down into end to end tests
 
-Explain what these tests test and why
+Here we test the software application from the user's perspective. 
 
-```
-Give an example
-```
+### And Unit tests
 
-### And coding style tests
+We test individual units (or the smallest unit) of application code to ensure they are working properly.
 
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 ## Deployment
 * To run the application, in your virtual device:
@@ -82,11 +61,7 @@ Give an example
 
 If you find a bug (the website couldn't handle the query and / or gave undesired results), kindly open an issue [here](https://github.com/NinaWendy/Movie_Deck/issues/new) by including your search query and the expected result.
 
-If you'd like to request a new function, feel free to do so by opening an issue [here](https://github.com/NinaWendy/Movie_Deck/issues/new). Please include sample queries and their corresponding results.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+If you'd like to request a new function, feel free to do so by opening an issue [here](https://github.com/NinaWendy/Movie_Deck/issues/new). Please include sample queries and their corresponding results. 
 
 ## Authors
 
