@@ -16,7 +16,6 @@ public class LoginFragmentTest {
     public Boolean validateUser(String user){
     if(user.isEmpty() || user.length() <2){
         return Boolean.FALSE;
-
     }else
         return Boolean.TRUE;
 }}
