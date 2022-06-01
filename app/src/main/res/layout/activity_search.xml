@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
     android:background="@color/white"
     tools:context=".SearchActivity">
 
@@ -12,11 +13,20 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Welcome"
+            android:textSize="16sp" />
+
         <SearchView
             android:id="@+id/search"
             android:layout_width="328dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="0dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_button"
             android:queryHint="search" />
@@ -24,7 +34,7 @@
         <ListView
             android:id="@+id/listview"
             android:layout_width="wrap_content"
-            android:layout_height="515dp"
+            android:layout_height="597dp"
             android:layout_margin="15dp"
             android:divider="#fff"
             android:dividerHeight="13dp"
@@ -53,8 +63,8 @@
         android:id="@+id/fab"
         android:layout_width="95dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_add"
         android:layout_marginBottom="2dp"
+        android:src="@drawable/ic_add"
         app:layout_anchor="@id/bottomAppBar"
         tools:ignore="SpeakableTextPresentCheck" />
 
