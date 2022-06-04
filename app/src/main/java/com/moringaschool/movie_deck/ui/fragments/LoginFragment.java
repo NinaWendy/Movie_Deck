@@ -1,4 +1,4 @@
-package fragments;
+package com.moringaschool.movie_deck.ui.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,12 +9,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import com.moringaschool.movie_deck.R;
-import com.moringaschool.movie_deck.SearchActivity;
 import com.moringaschool.movie_deck.databinding.FragmentLoginBinding;
+import com.moringaschool.movie_deck.ui.activities.DashboardActivity;
 
 public class LoginFragment extends Fragment {
     public LoginFragment() {
@@ -35,7 +34,7 @@ public class LoginFragment extends Fragment {
                 validateUser(username);
                 if (validateUser(username)) {
                     Toast.makeText(getActivity(), "You are logged as " + username.toString(), Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(getActivity(), SearchActivity.class);
+                    Intent intent = new Intent(getActivity(), DashboardActivity.class);
                     startActivity(intent);
                 }
             }

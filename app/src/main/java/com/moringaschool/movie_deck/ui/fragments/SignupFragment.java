@@ -1,4 +1,4 @@
-package fragments;
+package com.moringaschool.movie_deck.ui.fragments;
 
 import android.os.Bundle;
 

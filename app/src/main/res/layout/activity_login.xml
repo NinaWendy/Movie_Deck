@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".ui.activities.LoginActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -52,7 +52,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainer"
-        android:name="fragments.LoginFragment"
+        android:name="com.moringaschool.movie_deck.ui.fragments.LoginFragment"
         android:layout_width="303dp"
         android:layout_height="360dp"
         android:layout_marginStart="15dp"

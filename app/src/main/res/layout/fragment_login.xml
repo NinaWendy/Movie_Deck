@@ -5,7 +5,7 @@
     <data>
         <variable
             name="mylogin"
-            type="fragments.LoginFragment" />
+            type="com.moringaschool.movie_deck.ui.fragments.LoginFragment" />
     </data>
 
 

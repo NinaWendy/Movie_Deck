@@ -1,4 +1,4 @@
-package com.moringaschool.movie_deck;
+package com.moringaschool.movie_deck.ui.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
@@ -11,8 +11,10 @@ import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import fragments.LoginFragment;
-import fragments.SignupFragment;
+
+import com.moringaschool.movie_deck.R;
+import com.moringaschool.movie_deck.ui.fragments.LoginFragment;
+import com.moringaschool.movie_deck.ui.fragments.SignupFragment;
 
 public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.switchBtn)
