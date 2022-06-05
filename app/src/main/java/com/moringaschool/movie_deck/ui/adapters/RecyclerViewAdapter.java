@@ -42,8 +42,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     // Involves populating data into the item through holder
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-       holder.mMovieTitle.setText(mMovies.get(position).getOriginalName());
-       holder.mMovieYear.setText(mMovies.get(position).getFirstAirDate());
+       holder.mMovieTitle.setText(mMovies.get(position).getOriginalTitle());
+       holder.mMovieYear.setText(mMovies.get(position).getReleaseDate());
        holder.mRating.setText("Rating: " + mMovies.get(position).getVoteAverage() + "/10");
 
         Glide.with(mContext)
