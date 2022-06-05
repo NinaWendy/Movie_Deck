@@ -1,6 +1,6 @@
 # Movie_Deck
 
-A movie aplication that allows you to browse a list of your favourite movies view trailers and see a suggestion of different cinemas streaming the movie.
+A movie application that allows you to browse a list of your favourite movies view trailers and see a suggestion of different cinemas streaming the movie.
 
 ## Getting Started
 
@@ -9,9 +9,9 @@ A movie aplication that allows you to browse a list of your favourite movies vie
     1. Clone or download the Repository
     2. cd into directory then run `cd Movie_Deck`
     3. Rebuild the Project Using Android Studio IDE
-    4. Connectto a virtual device in the android studio emulator to be used to run the application.
+    4. Connect to a virtual device in the android studio emulator to be used to run the application.
     5. To run the application click on the 'play' icon at the top navigation.
-    6. Your application will launch on your device after running successfuly.
+    6. Your application will launch on your device after running successfully.
    
     See deployment for notes on how to run the application on a physical device.
 
@@ -42,11 +42,11 @@ We test individual units (or the smallest unit) of application code to ensure th
 
     1. Step 1,2 and 3 remain the same when using a physical device.
     2. Connect to a physical device using cable.
-    3. Enable developer options which will allow you to enable usb debuging on your physical device.
+    3. Enable developer options which will allow you to enable usb debugging on your physical device.
     4. After the device appears under the device file explorer select it.
     5. Note there is an option of pairing device over WIFI for the physical device v24 and above.
     6. Run the application by clicking the 'play' icon in top navigation bar.
-    7. Your application will launch on your device after running successfuly.
+    7. Your application will launch on your device after running successfully.
 
 
 ## Built With
@@ -54,6 +54,7 @@ We test individual units (or the smallest unit) of application code to ensure th
 * [Android](https://source.android.com) - The application framework used
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [Java](https://www.java.com/en/) - Used to connect business logic to backend
+* [TMDB](https://www.themoviedb.org/documentation/api) - The API used
 
 ## Contributing
 
