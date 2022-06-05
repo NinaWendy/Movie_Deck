@@ -5,7 +5,9 @@ import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.Toast;
 
 import com.moringaschool.movie_deck.R;
 import com.moringaschool.movie_deck.models.Constants;
@@ -47,7 +49,11 @@ public class DashboardActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<Movies> call, Throwable t) {
-
+                        Toast toast = Toast.makeText(getApplicationContext(),
+                                "Something went wrong. Please check your Internet connection and try again later",
+                                Toast.LENGTH_LONG);
+                        toast.setGravity(Gravity.CENTER, 0, 0);
+                        toast.show();
                     }
                 });
             }
