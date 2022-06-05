@@ -21,6 +21,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    //allow us to connect credentials when the project builds
+    buildTypes.each {
+        it.buildConfigField 'String', 'TMDB_API_KEY', TMDBApiKey
+    }
     buildscript {
         repositories {
             mavenCentral()
