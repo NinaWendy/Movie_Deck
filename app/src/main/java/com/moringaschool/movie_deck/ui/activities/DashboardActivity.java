@@ -8,15 +8,23 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.moringaschool.movie_deck.R;
+import com.moringaschool.movie_deck.models.Constants;
+import com.moringaschool.movie_deck.models.Movies;
+import com.moringaschool.movie_deck.network.clients.TmdbClient;
+import com.moringaschool.movie_deck.network.interfaces.TmdbApi;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class DashboardActivity extends AppCompatActivity {
     @BindView(R.id.Home) CardView home;
     @BindView(R.id.Search) CardView search;
     @BindView(R.id.Profile) CardView profile;
     @BindView(R.id.Settings) CardView settings;
+    TmdbApi client = TmdbClient.getClient();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +35,21 @@ public class DashboardActivity extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DashboardActivity.this, HomeActivity.class);
-                startActivity(intent);
+                //Import retrofit2 Call
+                Call<Movies> call = client.getResults(Constants.TMDB_API_KEY);
+                call.enqueue(new Callback<Movies>() {
+                    @Override
+                    public void onResponse(Call<Movies> call, Response<Movies> response) {
+                        Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
+                        intent.putExtra("Response", response.body());
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onFailure(Call<Movies> call, Throwable t) {
+
+                    }
+                });
             }
         });
     }
