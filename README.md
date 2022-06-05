@@ -2,6 +2,9 @@
 
 A movie application that allows you to browse a list of your favourite movies view trailers and see a suggestion of different cinemas streaming the movie.
 
+<!-- <img src="app/src/main/res/drawable/one.jpg"> -->
+
+
 ## Getting Started
 
 * To run the application, in your virtual device:
