@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "423583361422",
+    "project_id": "movie-deck-59e2c",
+    "storage_bucket": "movie-deck-59e2c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:423583361422:android:c95d649fdeba1eb0be5cdf",
+        "android_client_info": {
+          "package_name": "com.moringaschool.movie_deck"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "423583361422-nv60it7kjbmeti9ng5lt3sfqcr69kov4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCummx3ZLGV4gb8Ptd2FCcJkQnZO59JHk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "423583361422-nv60it7kjbmeti9ng5lt3sfqcr69kov4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
