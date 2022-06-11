@@ -3,6 +3,7 @@ package com.moringaschool.movie_deck.ui.activities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -56,6 +57,13 @@ public class LoginActivity extends AppCompatActivity {
                         .setReorderingAllowed(true)
                         .addToBackStack("name")
                         .commit();
+            }
+        });
+        switchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent  = new Intent(LoginActivity.this,SignupActivity.class);
+                startActivity(intent);
             }
         });
     }
