@@ -99,7 +99,7 @@
             app:layout_constraintTop_toTopOf="parent" >
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/usrName"
+                android:id="@+id/usrEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_person"
@@ -118,7 +118,7 @@
             app:layout_constraintTop_toBottomOf="@+id/username">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/passwrd"
+                android:id="@+id/loginPasswrd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_lock"

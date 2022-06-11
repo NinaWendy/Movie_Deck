@@ -47,33 +47,33 @@ public class LoginFragment extends Fragment {
             }
         });
 
-        binding.loginButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                String username = binding.usrName.getText().toString();
-                validateUser(username);
-                if (validateUser(username)) {
-                    Toast.makeText(getActivity(), "You are logged as " + username.toString(), Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(getActivity(), DashboardActivity.class);
-                    intent.putExtra("user",username);
-                    startActivity(intent);
-                }
-            }
-            public Boolean validateUser(String user){
-                if(user.isEmpty() || user.length() <3){
-                    Toast.makeText(getActivity(), "invalid user name", Toast.LENGTH_LONG).show();
-                    return Boolean.FALSE;
-
-                }else
-                    return Boolean.TRUE;
-            }
-        });
+//        binding.loginButton.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//                String username = binding.usrName.getText().toString();
+//                validateUser(username);
+//                if (validateUser(username)) {
+//                    Toast.makeText(getActivity(), "You are logged as " + username.toString(), Toast.LENGTH_LONG).show();
+//                    Intent intent = new Intent(getActivity(), DashboardActivity.class);
+//                    intent.putExtra("user",username);
+//                    startActivity(intent);
+//                }
+//            }
+//            public Boolean validateUser(String user){
+//                if(user.isEmpty() || user.length() <3){
+//                    Toast.makeText(getActivity(), "invalid user name", Toast.LENGTH_LONG).show();
+//                    return Boolean.FALSE;
+//
+//                }else
+//                    return Boolean.TRUE;
+//            }
+//        });
         SharedPreferences sP = getContext().getSharedPreferences("MyPref",Context.MODE_PRIVATE);
         String name = sP.getString("usrname","");
         String passwad = sP.getString("passwrd","");
-        binding.usrName.setText(name);
-        binding.passwrd.setText(passwad);
+//        binding.usrName.setText(name);
+//        binding.passwrd.setText(passwad);
 
         // Inflate the layout for this fragment
         return binding.getRoot();
