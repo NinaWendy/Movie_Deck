@@ -13,4 +13,12 @@ public interface TmdbApi {
             //name it as it is in the API documentation
             @Query("api_key") String apiKey
     );
+
+    @GET("search/movie")
+    Call<Movies> searchMovie(
+            //name it as it is in the API documentation
+            @Query("api_key") String apiKey,
+            @Query("query") String term,
+            @Query("page") String page
+    );
 }

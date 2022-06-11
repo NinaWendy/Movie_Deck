@@ -6,6 +6,7 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
@@ -76,5 +77,36 @@ public class DashboardActivity extends AppCompatActivity {
                 startActivity(mapIntent);
             }
         });
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Import retrofit2 Call
+                TmdbApi tmdbApi = TmdbClient.getClient();
+                Call<Movies> responseCall = tmdbApi
+                        .searchMovie(
+                                Constants.TMDB_API_KEY,
+                                "Action",
+                                "1"
+                        );
+                responseCall.enqueue(new Callback<Movies>() {
+                    @Override
+                    public void onResponse(Call<Movies> call, Response<Movies> response) {
+                        Intent intent = new Intent(DashboardActivity.this,SearchActivity.class);
+                        intent.putExtra("Response", response.body());
+                        startActivity(intent);
+                    }
+                    @Override
+                    public void onFailure(Call<Movies> call, Throwable t) {
+                        Log.e("Tag","Failed");
+                        Toast toast = Toast.makeText(getApplicationContext(),
+                                "Something went wrong. Please check your Internet connection and try again later",
+                                Toast.LENGTH_LONG);
+                        toast.setGravity(Gravity.CENTER, 0, 0);
+                        toast.show();
+                    }
+                });
+            }
+        });
+
     }
 }
