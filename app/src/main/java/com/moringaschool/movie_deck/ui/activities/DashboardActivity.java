@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.moringaschool.movie_deck.R;
@@ -27,6 +28,8 @@ public class DashboardActivity extends AppCompatActivity {
     @BindView(R.id.Search) CardView search;
     @BindView(R.id.Profile) CardView profile;
     @BindView(R.id.Settings) CardView settings;
+    @BindView(R.id.welcomeTxt)
+    TextView welcome;
     TmdbApi client = TmdbClient.getClient();
 
     @Override
@@ -34,6 +37,10 @@ public class DashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
         ButterKnife.bind(this);
+        Intent intent = getIntent();
+        String usr = intent.getStringExtra("user");
+        welcome.setText("Welcome" + " " + usr);
+
 
         home.setOnClickListener(new View.OnClickListener() {
             @Override
