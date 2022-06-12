@@ -9,9 +9,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.moringaschool.movie_deck.R;
 import com.moringaschool.movie_deck.models.Constants;
 import com.moringaschool.movie_deck.models.Movies;
@@ -32,6 +34,12 @@ public class DashboardActivity extends AppCompatActivity {
     @BindView(R.id.welcomeTxt)
     TextView welcome;
     TmdbApi client = TmdbClient.getClient();
+    @BindView(R.id.userProfile)
+    ImageView userProfile;
+    @BindView(R.id.logout)
+    TextView logout;
+    @BindView(R.id.prof)
+    TextView prof;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +49,6 @@ public class DashboardActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String usr = intent.getStringExtra("user");
         welcome.setText("Welcome" + " " + usr);
-
 
         home.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,6 +114,20 @@ public class DashboardActivity extends AppCompatActivity {
                 });
             }
         });
-
+        userProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                logout.setVisibility(View.VISIBLE);
+                prof.setVisibility(View.VISIBLE);
+            }
+        });
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(DashboardActivity.this,LoginActivity.class));
+                Toast.makeText(DashboardActivity.this, "Logout successfully", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
