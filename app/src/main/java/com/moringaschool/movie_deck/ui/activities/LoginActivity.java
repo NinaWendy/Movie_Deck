@@ -3,11 +3,16 @@ package com.moringaschool.movie_deck.ui.activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,7 +45,9 @@ public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.loginProgressBar)
     ProgressBar progressBar;
     private FirebaseAuth mAuth;
-
+    SharedPreferences sp;
+    @BindView(R.id.checkBox)
+    CheckBox checkBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +55,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
         mAuth = FirebaseAuth.getInstance();
+        sp = getSharedPreferences("MyPref", Context.MODE_PRIVATE);
         signupTxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,6 +69,24 @@ public class LoginActivity extends AppCompatActivity {
                 userLogin();
             }
         });
+        checkBox.setChecked(false);
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Log.e("Test", "onCheckedChanged:Remember Me");
+                String usr = Objects.requireNonNull(loginEmail.getText()).toString();
+                String pass = Objects.requireNonNull(loginPassword.getText()).toString();
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putString("usrname",usr);
+                editor.putString("passwrd",pass);
+                editor.apply();
+            }
+        });
+        SharedPreferences sP = getSharedPreferences("MyPref",Context.MODE_PRIVATE);
+        String useremail = sP.getString("usrname","");
+        String passwad = sP.getString("passwrd","");
+        loginEmail.setText(useremail);
+        loginPassword.setText(passwad);
     }
 
     private void userLogin() {

@@ -32,20 +32,20 @@ public class LoginFragment extends Fragment {
 
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_login,container,false);
 
-        sp = getActivity().getSharedPreferences("MyPref", Context.MODE_PRIVATE);
-        binding.checkBox.setChecked(false);
-        binding.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                Log.e("Test", "onCheckedChanged:Remember Me");
-                String usr = binding.username.getEditText().getText().toString();
-                String pass = binding.password.getEditText().getText().toString();
-                SharedPreferences.Editor editor = sp.edit();
-                editor.putString("usrname",usr);
-                editor.putString("passwrd",pass);
-                editor.apply();
-            }
-        });
+//        sp = getActivity().getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+//        binding.checkBox.setChecked(false);
+//        binding.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                Log.e("Test", "onCheckedChanged:Remember Me");
+//                String usr = binding.username.getEditText().getText().toString();
+//                String pass = binding.password.getEditText().getText().toString();
+//                SharedPreferences.Editor editor = sp.edit();
+//                editor.putString("usrname",usr);
+//                editor.putString("passwrd",pass);
+//                editor.apply();
+//            }
+//        });
 
 //        binding.loginButton.setOnClickListener(new View.OnClickListener() {
 //
@@ -69,9 +69,9 @@ public class LoginFragment extends Fragment {
 //                    return Boolean.TRUE;
 //            }
 //        });
-        SharedPreferences sP = getContext().getSharedPreferences("MyPref",Context.MODE_PRIVATE);
-        String name = sP.getString("usrname","");
-        String passwad = sP.getString("passwrd","");
+//        SharedPreferences sP = getContext().getSharedPreferences("MyPref",Context.MODE_PRIVATE);
+//        String name = sP.getString("usrname","");
+//        String passwad = sP.getString("passwrd","");
 //        binding.usrName.setText(name);
 //        binding.passwrd.setText(passwad);
 
