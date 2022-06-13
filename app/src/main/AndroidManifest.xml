@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.moringaschool.movie_deck">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,6 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Movie_Deck"
         tools:targetApi="31">
+        <activity
+            android:name=".ui.activities.SignupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.SearchActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.activities.HomeActivity"
             android:exported="false" />
