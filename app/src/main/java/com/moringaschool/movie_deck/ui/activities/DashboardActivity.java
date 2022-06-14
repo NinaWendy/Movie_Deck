@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.moringaschool.movie_deck.R;
 import com.moringaschool.movie_deck.models.Constants;
@@ -40,6 +41,8 @@ public class DashboardActivity extends AppCompatActivity {
     TextView logout;
     @BindView(R.id.prof)
     TextView prof;
+    @BindView(R.id.floatingActionButton)
+    FloatingActionButton fb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,6 +130,13 @@ public class DashboardActivity extends AppCompatActivity {
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(DashboardActivity.this,LoginActivity.class));
                 Toast.makeText(DashboardActivity.this, "Logout successfully", Toast.LENGTH_SHORT).show();
+            }
+        });
+        fb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( DashboardActivity.this,WatchListActivity.class);
+                startActivity(intent);
             }
         });
     }
