@@ -21,7 +21,7 @@ A movie application that allows you to browse a list of your favourite movies vi
 ### Prerequisites
 
 - Basic Git knowledge, including an installed version of Git.
-- Your application must run on the SDK version 32
+- Your application must run on atleast Android SDK 6 (API 23)
 
 ## Tests
 
