@@ -24,13 +24,13 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/gridMovies"
-        android:layout_width="336dp"
-        android:layout_height="599dp"
-        android:layout_marginStart="4dp"
+        android:layout_width="333dp"
+        android:layout_height="570dp"
+        android:layout_marginStart="1dp"
         android:layout_marginEnd="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.179"
+        app:layout_constraintHorizontal_bias="0.171"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:layout_constraintVertical_bias="0.0" />

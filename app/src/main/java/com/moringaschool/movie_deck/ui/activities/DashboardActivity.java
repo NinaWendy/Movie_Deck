@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.moringaschool.movie_deck.R;
@@ -139,5 +141,14 @@ public class DashboardActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+       settings.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               YoYo.with(Techniques.Tada)
+                       .duration(700)
+                       .repeat(5)
+                       .playOn(findViewById(R.id.Settings));
+           }
+       });
     }
 }
