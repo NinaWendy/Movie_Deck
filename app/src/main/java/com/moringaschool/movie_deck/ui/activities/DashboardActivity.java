@@ -148,6 +148,7 @@ public class DashboardActivity extends AppCompatActivity {
                        .duration(700)
                        .repeat(5)
                        .playOn(findViewById(R.id.Settings));
+
            }
        });
     }
