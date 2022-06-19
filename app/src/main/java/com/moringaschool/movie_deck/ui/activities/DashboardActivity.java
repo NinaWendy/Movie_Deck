@@ -45,6 +45,7 @@ public class DashboardActivity extends AppCompatActivity {
     TextView prof;
     @BindView(R.id.floatingActionButton)
     FloatingActionButton fb;
+    @BindView(R.id.fav) TextView fav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,6 +125,7 @@ public class DashboardActivity extends AppCompatActivity {
             public void onClick(View v) {
                 logout.setVisibility(View.VISIBLE);
                 prof.setVisibility(View.VISIBLE);
+                fav.setVisibility(View.VISIBLE);
             }
         });
         logout.setOnClickListener(new View.OnClickListener() {
@@ -149,6 +151,13 @@ public class DashboardActivity extends AppCompatActivity {
                        .repeat(5)
                        .playOn(findViewById(R.id.Settings));
 
+           }
+       });
+       fav.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(DashboardActivity.this,FavouritesActivity.class);
+               startActivity(intent);
            }
        });
     }
