@@ -13,6 +13,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.moringaschool.movie_deck.R;
 import com.moringaschool.movie_deck.models.Constants;
@@ -40,6 +43,9 @@ public class DashboardActivity extends AppCompatActivity {
     TextView logout;
     @BindView(R.id.prof)
     TextView prof;
+    @BindView(R.id.floatingActionButton)
+    FloatingActionButton fb;
+    @BindView(R.id.fav) TextView fav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,6 +125,7 @@ public class DashboardActivity extends AppCompatActivity {
             public void onClick(View v) {
                 logout.setVisibility(View.VISIBLE);
                 prof.setVisibility(View.VISIBLE);
+                fav.setVisibility(View.VISIBLE);
             }
         });
         logout.setOnClickListener(new View.OnClickListener() {
@@ -129,5 +136,29 @@ public class DashboardActivity extends AppCompatActivity {
                 Toast.makeText(DashboardActivity.this, "Logout successfully", Toast.LENGTH_SHORT).show();
             }
         });
+        fb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( DashboardActivity.this,WatchListActivity.class);
+                startActivity(intent);
+            }
+        });
+       settings.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               YoYo.with(Techniques.Tada)
+                       .duration(700)
+                       .repeat(5)
+                       .playOn(findViewById(R.id.Settings));
+
+           }
+       });
+       fav.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(DashboardActivity.this,FavouritesActivity.class);
+               startActivity(intent);
+           }
+       });
     }
 }

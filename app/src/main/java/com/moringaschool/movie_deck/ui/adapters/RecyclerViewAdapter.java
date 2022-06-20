@@ -20,11 +20,12 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>{
-
+    private final RecyclerViewInterface recyclerViewInterface;
     private List<Result> mMovies;
     private Context mContext;
     // Pass in the RecyclerModelClass array into the constructor
-    public RecyclerViewAdapter(Context context, List<Result> movies) {
+    public RecyclerViewAdapter(RecyclerViewInterface recyclerViewInterface, Context context, List<Result> movies) {
+        this.recyclerViewInterface = recyclerViewInterface;
         mContext =context;
         mMovies= movies;
     }
@@ -35,8 +36,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
        LayoutInflater inflater = LayoutInflater.from(mContext);
         // Inflate the custom row layout
         View movieView = inflater.inflate(R.layout.custom_row,parent,false);
-        ViewHolder viewHolder = new ViewHolder(movieView);
-       return viewHolder;
+        return new ViewHolder(movieView);
     }
 
     // Involves populating data into the item through holder
@@ -74,6 +74,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             super(itemView);
             ButterKnife.bind(this, itemView);
             context = itemView.getContext();
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (recyclerViewInterface != null){
+                        int pos = getAdapterPosition();
+                        if (pos!= RecyclerView.NO_POSITION){
+                            recyclerViewInterface.onItemClick(pos);
+                        }
+                    }
+                }
+            });
         }
     }
 

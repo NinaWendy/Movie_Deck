@@ -16,6 +16,12 @@
         android:theme="@style/Theme.Movie_Deck"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activities.FavouritesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.WatchListActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activities.SignupActivity"
             android:exported="false" />
         <activity

@@ -51,6 +51,14 @@
                     android:numStars="5"
                     android:rating="4"
                     tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Language: en" />
             </LinearLayout>
 
         </LinearLayout>

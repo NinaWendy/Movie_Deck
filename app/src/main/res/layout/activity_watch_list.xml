@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activities.WatchListActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/gravitas_one"
+        android:gravity="center"
+        android:text="My Watch List"
+        android:textColor="@color/gray"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/movieAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:hint="Add movie to watchlist..."
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/addBtn"
+        android:layout_width="332dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:onClick="save"
+        android:text="SAVE" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/watchList"
+        android:layout_width="319dp"
+        android:layout_height="398dp"
+        android:layout_marginStart="20dp" />
+
+
+</LinearLayout>
